@@ -6,7 +6,8 @@ module.exports = {
             const patient = await Patient.create(req.body);
 
             return res.status(201).json(patient);
-        } catch (error) {
+        } 
+        catch (error) {
             return res.status(400).json({message: error.message});
         }
     },
@@ -15,7 +16,8 @@ module.exports = {
             const patients = await Patient.findAll();
 
             return res.status(200).json(patients)
-        } catch (error) {
+        } 
+        catch (error) {
             return res.status(500).json({message: error.message});
         }
     },
@@ -30,7 +32,8 @@ module.exports = {
             }
 
             return res.status(200).json(patient);
-        } catch (error) {
+        } 
+        catch (error) {
             return res.status(500).json({message: error.message});
         }
     },
@@ -45,11 +48,12 @@ module.exports = {
             const updatedPatient = await patient.update(req.body);
 
             return res.status(200).json(updatedPatient);
-        } catch (error) {
+        } 
+        catch (error) {
             return res.status(400).json({message: error.message});
         }
     },
-    async delete(req, res) {
+    async remove(req, res) {
         try {
             const patient = await Patient.findByPk(req.params.id);
 
@@ -60,7 +64,8 @@ module.exports = {
             const deletedPatient = await patient.destroy();
 
             return res.status(200).json({message: 'Patient deleted'});
-        } catch (error) {
+        } 
+        catch (error) {
             return res.status(500).json({message: error.message});
         }
     }
