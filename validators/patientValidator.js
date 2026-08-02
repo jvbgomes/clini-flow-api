@@ -31,5 +31,4 @@ module.exports = {
         .isDate().withMessage('Birth date must be a valid date'),
     ]
 
-
 };
